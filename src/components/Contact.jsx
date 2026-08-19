@@ -26,14 +26,14 @@ export default function Contact() {
                   WhatsApp
                 </p>
                 <p className="text-sm text-[var(--color-text-secondary)]">
-                  0823 3802 1907
+                  +62-0823-3802-1907
                 </p>
               </div>
             </div>
           </div>
 
           <a
-            href="https://wa.me/6282338021907"
+            href="https://wa.me/6282338021907?text=Halo%2C%20saya%20tertarik%20untuk%20berdiskusi%20mengenai%20investasi%2C%20keuangan%2C%20dan%20bisnis."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-[var(--color-gold)] text-[#050505] font-semibold text-sm rounded-full hover:bg-[var(--color-gold-bright)] transition-colors duration-200 w-full justify-center"
