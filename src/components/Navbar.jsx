@@ -61,7 +61,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
+            className="md:hidden p-2 rounded-lg bg-white/5 hover:bg-white/10 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
             {isOpen ? <X size={22} /> : <Menu size={22} />}
