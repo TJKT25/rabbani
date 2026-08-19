@@ -30,47 +30,57 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#050505]/80 backdrop-blur-xl border-b border-white/8'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-5 md:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <a
-            href="#home"
-            className="text-[var(--color-gold)] font-extrabold text-xl tracking-[0.15em] uppercase"
-          >
-            PFR
-          </a>
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-[#050505]/80 backdrop-blur-xl border-b border-white/8'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-5 md:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            <a
+              href="#home"
+              className="text-[var(--color-gold)] font-extrabold text-xl tracking-[0.15em] uppercase"
+            >
+              PFR
+            </a>
 
-          <ul className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] rounded-full transition-colors duration-200 hover:bg-white/5"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+            <ul className="hidden md:flex items-center gap-1">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="px-4 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] rounded-full transition-colors duration-200 hover:bg-white/5"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg bg-white/5 hover:bg-white/10 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 rounded-lg bg-white/5 hover:bg-white/10 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            >
+              {isOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
-      </div>
+      </nav>
+
+      {isOpen && (
+        <div
+          className="md:hidden fixed inset-0 z-[60] bg-[#050505]/65"
+          onClick={() => setIsOpen(false)}
+          aria-hidden="true"
+        />
+      )}
 
       <div
-        className={`md:hidden fixed inset-0 top-16 bg-[#050505]/95 backdrop-blur-xl transition-all duration-300 ${
+        className={`md:hidden fixed top-16 left-0 right-0 bottom-0 z-[61] bg-[#050505] transition-opacity duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -80,7 +90,7 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="text-xl text-[var(--color-text-secondary)] hover:text-[var(--color-gold)] transition-colors duration-200 py-3 px-6"
+              className="text-xl text-[var(--color-text-secondary)] hover:text-[var(--color-gold)] transition-colors duration-200 py-4 px-6"
               style={{ animationDelay: `${i * 60}ms` }}
             >
               {item.label}
@@ -88,6 +98,6 @@ export default function Navbar() {
           ))}
         </div>
       </div>
-    </nav>
+    </>
   );
 }
