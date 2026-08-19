@@ -115,9 +115,8 @@ export default function Hero() {
             </p>
 
             <h1 className="animate-fade-in-up delay-100 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.08] tracking-tight text-[var(--color-text-primary)]">
-              Pandji Fauzan
-              <br />
-              <span className="text-[var(--color-gold)]">Rabbani</span>
+              <span className="text-[var(--color-gold)]">Rabbani</span>{' '}
+              Capital
             </h1>
 
             <p className="animate-fade-in-up delay-200 text-lg md:text-xl text-[var(--color-gold-bright)] font-medium">

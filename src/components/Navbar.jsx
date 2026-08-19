@@ -41,9 +41,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <a
             href="#home"
-            className="text-[var(--color-gold)] font-bold text-lg tracking-wide"
+            className="text-[var(--color-gold)] font-extrabold text-xl tracking-[0.15em] uppercase"
           >
-            Rabbani Capital
+            PFR
           </a>
 
           <ul className="hidden md:flex items-center gap-1">
